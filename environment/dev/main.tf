@@ -34,7 +34,7 @@ module "secrets" {
 }
 module "vms" {
   source = "../../module/azurerm_virtual_machine"
-  depends_on = [ module.virtual_network ]
+  depends_on = [module.virtual_network, module.pip, module.nic, module.secrets]
   vms = var.vms
 }
 
