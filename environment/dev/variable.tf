@@ -102,3 +102,30 @@ variable "vms" {
     }))
   }))
 }
+variable "servers" {
+  type = map(object({
+    name                         = string
+    resource_group_name          = string
+    location                     = string
+    version                      = string
+    administrator_login          = optional(string)
+    administrator_login_password = optional(string)
+    minimum_tls_version          = optional(string)
+    azuread_administrators = optional(map(string({
+      login_username = string
+      object_id      = string
+    })))
+  }))
+}
+
+variable "database" {
+  type = map(object({
+    name         = string
+    collation    = string
+    license_type = string
+    max_size_gb  = number
+    sku_name     = string
+    enclave_type = string
+    tags         = map(string)
+  }))
+}

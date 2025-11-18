@@ -228,3 +228,45 @@ vms = {
   }
 }
 
+servers = {
+  server1 = {
+    name                         = "servertodo001"
+    resource_group_name          = "rg-todo-001"
+    location                     = "Centra;l India"
+    administrator_login          = "server001"
+    administrator_login_password = "Ali@1001"
+    version                      = "12.0"
+  }
+  server2 = {
+    name                         = "servertodo002"
+    resource_group_name          = "rg-todo-002"
+    location                     = "Centra;l India"
+    administrator_login          = "server002"
+    administrator_login_password = "Ali@1001"
+    version                      = "12.0"
+  }
+}
+
+database = {
+  database1 = {
+    name                = "database001"
+    server_name         = "servertodo001"
+    resource_group_name = "rg-todo-001"
+    collation           = "SQL_Latin1_General_CP1_CI_AS"
+    license_type        = "LicenseIncluded"
+    max_size_gb         = "2"
+    sku_name            = "S0"
+    enclave_type        = "VBS"
+  }
+  database1 = {
+    name                = "database002"
+    server_name         = "servertodo002"
+    resource_group_name = "rg-todo-002"
+    collation           = "SQL_Latin1_General_CP1_CI_AS"
+    license_type        = "LicenseIncluded"
+    max_size_gb         = "2"
+    sku_name            = "S0"
+    enclave_type        = "VBS"
+
+  }
+}

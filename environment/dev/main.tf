@@ -23,18 +23,29 @@ module "nic" {
   nic        = var.nic
 }
 module "key_vault" {
-  source = "../../module/azurerm_key_vault"
-  depends_on = [ module.resource_group ]
-  keyvault = var.keyvault
+  source     = "../../module/azurerm_key_vault"
+  depends_on = [module.resource_group]
+  keyvault   = var.keyvault
 }
 module "secrets" {
   source     = "../../module/azurerm_secret"
   depends_on = [module.key_vault]
   secrets    = var.secrets
 }
-module "vms" {
-  source = "../../module/azurerm_virtual_machine"
-  depends_on = [module.virtual_network, module.pip, module.nic, module.secrets]
-  vms = var.vms
+module "servers" {
+  source     = "../../module/azurerm_sql_server"
+  depends_on = [module.resource_group]
+  servers    = var.servers
 }
+module "database" {
+  source     = "../../module/azurerm_data_base"
+  depends_on = [module.resource_group, module.servers]
+  database   = var.database
+}
+module "vms" {
+  source     = "../../module/azurerm_virtual_machine"
+  depends_on = [module.virtual_network, module.pip, module.nic, module.secrets]
+  vms        = var.vms
+}
+
 
