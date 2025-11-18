@@ -258,7 +258,7 @@ database = {
     sku_name            = "S0"
     enclave_type        = "VBS"
   }
-  database1 = {
+  database2 = {
     name                = "database002"
     server_name         = "servertodo002"
     resource_group_name = "rg-todo-002"
