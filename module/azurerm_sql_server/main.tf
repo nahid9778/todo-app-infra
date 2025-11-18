@@ -8,14 +8,14 @@ resource "azurerm_mssql_server" "mssql_server" {
   administrator_login_password = each.value.administrator_login_password
   minimum_tls_version          = each.value.minimum_tls_version
 
-  dynamic "azuread_administrator" {
-    for_each = each.value.azuread_administrators
-    content {
-      login_username = azuread_administrators.value.login_username
-      object_id      = azuread_administrators.value.object_id
-    }
-  }
-  tags = each.value.tags
+  # dynamic "azuread_administrator" {
+  #   for_each = each.value.azuread_administrators
+  #   content {
+  #     login_username = azuread_administrators.value.login_username
+  #     object_id      = azuread_administrators.value.object_id
+  #   }
+  # }
+  # tags = each.value.tags
 }
 
 

@@ -232,7 +232,7 @@ servers = {
   server1 = {
     name                         = "servertodo001"
     resource_group_name          = "rg-todo-001"
-    location                     = "Centra;l India"
+    location                     = "Central India"
     administrator_login          = "server001"
     administrator_login_password = "Ali@1001"
     version                      = "12.0"
@@ -240,7 +240,7 @@ servers = {
   server2 = {
     name                         = "servertodo002"
     resource_group_name          = "rg-todo-002"
-    location                     = "Centra;l India"
+    location                     = "Central India"
     administrator_login          = "server002"
     administrator_login_password = "Ali@1001"
     version                      = "12.0"
@@ -257,6 +257,9 @@ database = {
     max_size_gb         = "2"
     sku_name            = "S0"
     enclave_type        = "VBS"
+    tags = {
+      environment = "dev"
+    }
   }
   database2 = {
     name                = "database002"
@@ -267,6 +270,9 @@ database = {
     max_size_gb         = "2"
     sku_name            = "S0"
     enclave_type        = "VBS"
+    tags = {
+      environment = "dev"
+    }
 
   }
 }

@@ -111,21 +111,24 @@ variable "servers" {
     administrator_login          = optional(string)
     administrator_login_password = optional(string)
     minimum_tls_version          = optional(string)
-    azuread_administrators = optional(map(string({
-      login_username = string
-      object_id      = string
-    })))
+    # azuread_administrators = optional(map(object({
+    #   login_username = string
+    #   object_id      = string
+    # })))
+    # tags = optional(map(string))
   }))
 }
 
 variable "database" {
   type = map(object({
-    name         = string
-    collation    = string
-    license_type = string
-    max_size_gb  = number
-    sku_name     = string
-    enclave_type = string
-    tags         = map(string)
+    name                = string
+    server_name         = string
+    resource_group_name = string
+    collation           = string
+    license_type        = string
+    max_size_gb         = number
+    sku_name            = string
+    enclave_type        = string
+    tags                = map(string)
   }))
 }
