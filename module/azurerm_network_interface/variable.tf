@@ -5,6 +5,7 @@ variable "nic" {
     resource_group_name  = string
     virtual_network_name = string
     subnet_name          = string
+    pip_name             = string
     auxiliary_sku        = optional(string)
     auxiliary_mode       = optional(string)
     tags                 = optional(map(string))
