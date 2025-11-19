@@ -133,7 +133,7 @@ nic = {
 
 keyvault = {
   key1 = {
-    name                        = "keyvault001oss"
+    name                        = "keyvault0010oss"
     resource_group_name         = "rg-todo-001"
     location                    = "Central india"
     enabled_for_disk_encryption = "true"
@@ -142,7 +142,7 @@ keyvault = {
     sku_name                    = "standard"
   }
   key2 = {
-    name                        = "keyvault002oss"
+    name                        = "keyvault0020oss"
     resource_group_name         = "rg-todo-002"
     location                    = "Central india"
     enabled_for_disk_encryption = "true"
